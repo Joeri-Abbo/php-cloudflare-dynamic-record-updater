@@ -1,0 +1,23 @@
+{
+  "name": "joeri-abbo/cloudflare-dynamic-record-updater",
+  "description": "Update DNS dynamic on cloudflare",
+  "keywords": [
+    "tool",
+    "dns",
+    "dynamic-dns",
+    "record",
+    "cloudflare"
+  ],
+  "authors": [
+    {
+      "name": "Joeri Abbo",
+      "email": "joeriabbo@hotmail.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "CloudFlareDynamicDnsUpdater\\": "src/"
+    }
+  }
+}
