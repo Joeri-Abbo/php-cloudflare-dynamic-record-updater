@@ -83,7 +83,7 @@ class DNSRecord
      * @param int $ttl
      * @param bool $proxied
      */
-    public function __construct(string $type = null, string $name = null, string $content = null, int $ttl = 1, bool $proxied = true)
+    public function __construct(?string $type = null, ?string $name = null, ?string $content = null, int $ttl = 1, bool $proxied = true)
     {
         $this->type = $type;
         $this->name = $name;
@@ -170,7 +170,10 @@ class DNSRecord
      */
     public function getType(): string
     {
-        return in_array($this->type, self::TYPES) ? $this->type : dd('no valid type for record');
+        if (!in_array($this->type, self::TYPES)) {
+            throw new \InvalidArgumentException('no valid type for record');
+        }
+        return $this->type;
     }
 
     /**
@@ -179,7 +182,10 @@ class DNSRecord
      */
     public function setType(): string
     {
-        return in_array($this->type, self::TYPES) ? $this->type : dd('no valid type for record');
+        if (!in_array($this->type, self::TYPES)) {
+            throw new \InvalidArgumentException('no valid type for record');
+        }
+        return $this->type;
     }
 
     /**
